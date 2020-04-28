@@ -3,13 +3,14 @@ import {
   Button,
   Keyboard,
   StyleSheet,
-  Text,
   TouchableWithoutFeedback,
   View,
   Alert,
 } from "react-native";
+import BodyText from "../components/BodyText";
 import Card from "../components/Card";
 import NumberInput from "../components/NumberInput";
+import TitleText from "../components/TitleText";
 import Colors from "../constants/colors";
 
 interface Props {
@@ -48,9 +49,9 @@ export default function StartGameScreen(props: Props) {
   return (
     <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
       <View style={styles.screen}>
-        <Text>Start a new game</Text>
+        <TitleText style={styles.title}>Start a new game</TitleText>
         <Card style={styles.card}>
-          <Text>Select a number</Text>
+          <BodyText>Select a number</BodyText>
           <NumberInput
             maxLength={2}
             onChangeText={numberInputHandler}
@@ -84,6 +85,9 @@ const styles = StyleSheet.create({
     flex: 1,
     padding: 10,
     alignItems: "center",
+  },
+  title: {
+    marginVertical: 20,
   },
   card: {
     width: 300,

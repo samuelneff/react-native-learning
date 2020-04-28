@@ -1,5 +1,6 @@
 import React from "react";
-import { StyleSheet, Text, View } from "react-native";
+import { StyleSheet, View } from "react-native";
+import TitleText from "./TitleText";
 import Colors from "../constants/colors";
 
 interface Props {
@@ -10,7 +11,7 @@ export default function Header(props: Props) {
   const { title } = props;
   return (
     <View style={styles.header}>
-      <Text style={styles.headerTitle}>{title}</Text>
+      <TitleText style={styles.headerTitle}>{title}</TitleText>
     </View>
   );
 }
@@ -26,6 +27,5 @@ const styles = StyleSheet.create({
   },
   headerTitle: {
     color: "black",
-    fontSize: 18,
   },
 });
